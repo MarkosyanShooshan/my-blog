@@ -1,0 +1,31 @@
+<!-- {% load static %}
+<li>
+    <article class="post">
+        <a href="{% url "post-detail-page" post.slug %}">
+            <img src="{% static "blog/images/" |add:post.image %}" alt="{{post.title}}" />
+
+            <div class="post_content">
+                <h3>{{ post.title }}</h3>
+                <p>
+                   {{ post.excerpt }}
+                </p>
+            </div>
+        </a>
+    </article>
+</li> -->
+
+
+{% load static %}
+<li>
+    <article class="post">
+        <a href="{% url "post-detail-page" post.slug %}">
+            <!-- image_name դաշտի օգտագործում -->
+           <img src="{{ post.image.url }}" alt="{{ post.title }}" />
+
+            <div class="post_content">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}</p>
+            </div>
+        </a>
+    </article>
+</li>
